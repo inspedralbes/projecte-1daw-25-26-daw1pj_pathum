@@ -15,4 +15,10 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
  * URL de producció (quan la tingueu)
  * Estat: (explicació d'en quin punt està)
 
+## PROGRAMACIÓN
 ![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/a.png)
+
+## BBDD
+
+## SISTEMAS INFORMATICOS
+
