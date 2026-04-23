@@ -14,4 +14,5 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
  * Adreça del prototip gràfic del projecte (Penpot, figma, moqups...)
  * URL de producció (quan la tingueu)
  * Estat: (explicació d'en quin punt està)
-Hola
+
+![texto alternativo](https://drive.google.com/file/d/16LqZSReJvBX8Az2afKBWRNeyXpMqnh1r/view?usp=sharing)
