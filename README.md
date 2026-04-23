@@ -15,4 +15,4 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
  * URL de producció (quan la tingueu)
  * Estat: (explicació d'en quin punt està)
 
-![texto alternativo](https://drive.google.com/file/d/16LqZSReJvBX8Az2afKBWRNeyXpMqnh1r/view?usp=sharing)
+![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/a.png)
