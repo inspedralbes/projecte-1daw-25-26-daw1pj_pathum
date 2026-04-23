@@ -19,6 +19,7 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
 ![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/a.png)
 
 ## BBDD
+![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/b.png)
 
 ## SISTEMAS INFORMATICOS
 
