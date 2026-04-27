@@ -21,5 +21,8 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
 ## BBDD
 ![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/b.png)
 
+## PEMPOT
+https://design.penpot.app/#/view?file-id=cc32ce3d-bd54-8151-8007-e9d02a29e956&page-id=ceed1600-61c0-8087-8007-e98cb9c2550f&section=interactions&index=0&share-id=614162e1-9f0e-816a-8007-eea8d511cbe3
+
 ## SISTEMAS INFORMATICOS
 
