@@ -49,6 +49,7 @@ $result = $conn->query($sql);
           <th>Prioritat</th>
           <th>Data</th>
           <th>Estat</th>
+          <th>Accio</th>
         </tr>
       </thead>
       <tbody>
@@ -73,6 +74,7 @@ $result = $conn->query($sql);
               <td><span class="badge <?= $prioritatClass ?>"><?= $row['prioritat'] ?></span></td>
               <td><?= date('d/m/Y H:i', strtotime($row['data'])) ?></td>
               <td><span class="badge <?= $badgeClass ?>"><?= $estat ?></span></td>
+              <td><a href="asignar_incidencia.php?id=<?= $row['idIncidencia'] ?>" class="btn btn-sm btn-info">Assignar</a></td>
             </tr>
           <?php endwhile; ?>
         <?php else: ?>
