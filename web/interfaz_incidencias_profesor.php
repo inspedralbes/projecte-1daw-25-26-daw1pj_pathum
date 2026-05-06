@@ -17,7 +17,7 @@
 
                 <div class="d-grid gap-3">
                     <a href="crear_incidencia.php" class="btn btn-info py-3 shadow-sm">Crear nova incidència</a>
-                    <a href="usuari.php" class="btn btn-info py-3 shadow-sm">Estat d'una incidència</a>
+                    <a href="estado_incidencia_profesor.php" class="btn btn-info py-3 shadow-sm">Estat d'una incidència</a>
                 </div>
 
                 <div class="text-end mt-3">
