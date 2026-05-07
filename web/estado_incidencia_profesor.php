@@ -1,11 +1,22 @@
 <?php
 require_once 'connexio.php';
 
-$result = $conn->query("SELECT i.idIncidencia, i.data, i.prioritat, d.nom AS departament, tp.nom AS tipus, t.nom AS tecnic    
+$id = isset($_GET['id']) ? (int)$_GET['id'] : null;
+
+if ($id) {
+    $result = $conn->query("SELECT i.idIncidencia, i.data, i.prioritat, i.descripcio, d.nom AS departament, tp.nom AS tipus, t.nom AS tecnic
     FROM INCIDENCIA i
     LEFT JOIN DEPARTMENT d ON i.departament = d.idDepartment
     LEFT JOIN TIPO tp ON i.tipo = tp.idTipo
-    LEFT JOIN TECNIC t ON i.tecnic = t.idTecnic");    
+    LEFT JOIN TECNIC t ON i.tecnic = t.idTecnic
+    WHERE i.idIncidencia = $id");
+} else {
+$result = $conn->query("SELECT i.idIncidencia, i.data, i.prioritat, i.descripcio, d.nom AS departament, tp.nom AS tipus, t.nom AS tecnic    
+    FROM INCIDENCIA i
+    LEFT JOIN DEPARTMENT d ON i.departament = d.idDepartment
+    LEFT JOIN TIPO tp ON i.tipo = tp.idTipo
+    LEFT JOIN TECNIC t ON i.tecnic = t.idTecnic");  
+}  
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -17,6 +28,13 @@ $result = $conn->query("SELECT i.idIncidencia, i.data, i.prioritat, d.nom AS dep
 <body class="min-vh-100 bg-light py-5">
 <div class="container">
     <h2 class="mb-4">Estat de les incidències</h2>
+
+    <form method="GET" class="d-flex gap-2 mb-4">
+        <input type="number" name="id" class="form-control w-auto" placeholder="Cerca per ID" value="<?= $id ?>">
+        <button type="submit" class="btn btn-info text-white">Cercar</button>
+        <a href="estado_incidencia_profesor.php" class="btn btn-secondary">Veure totes</a>
+    </form>
+
     <table class="table table-secondary">
         <thead class="table-dark">
             <tr>
@@ -26,6 +44,7 @@ $result = $conn->query("SELECT i.idIncidencia, i.data, i.prioritat, d.nom AS dep
                 <th>Tipus</th>
                 <th>Tecnic</th>
                 <th>Prioritat</th>
+                <th>Descripció</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +56,7 @@ $result = $conn->query("SELECT i.idIncidencia, i.data, i.prioritat, d.nom AS dep
                 <td><?= $row['tipus'] ?></td>
                 <td><?= $row['tecnic'] ?? 'Sense assignar' ?></td>
                 <td><?= $row['prioritat'] ?: 'Sense assignar' ?></td>
+                <td><?= $row['descripcio'] ?></td>
             </tr>
             <?php endwhile; ?>
         </tbody>

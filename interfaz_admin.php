@@ -18,6 +18,7 @@
         <div class="d-grid gap-3">
           <a href="listado_tecnicos_admin.php" class="btn btn-info py-3 shadow-sm">Buscar Tècnics</a>
           <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm">Llistar totes les Incidències</a>
+          <a href="asignacion_incidencies_admin.php" class="btn btn-info py-3 shadow-sm">Assignar Incidències</a>
         </div>
         <div class="d-flex justify-content-end mt-3">
           <a href="index.php" class="btn btn-secondary shadow-sm">Volver</a>
