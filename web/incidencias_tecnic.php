@@ -1,9 +1,7 @@
 <?php
 require_once 'connexio.php';
 
-
 $idTecnic = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-
 
 $resultat = $conn->query("SELECT nom FROM TECNIC WHERE idTecnic = $idTecnic");
 $row = $resultat->fetch_assoc();
@@ -17,9 +15,11 @@ $nomTecnic = $row ? $row['nom'] : "Tècnic";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="vh-100 d-flex align-items-center justify-content-center bg-white"> <?php include 'header.php'; ?>
+<body class="bg-white"> 
+    
+    <?php include 'header.php'; ?>
 
-    <div class="container text-center">
+    <div class="container text-center mt-5">
         
         <h1 class="mb-5 fw-bold text-dark text-uppercase">
             OPCIONS DE <?= $nomTecnic ?>
@@ -38,8 +38,7 @@ $nomTecnic = $row ? $row['nom'] : "Tècnic";
                         MODIFICAR INCIDÈNCIES
                     </a>
 
-                    <div class="row g-2 mt-4">
-                        <div class="col-6">
+                    <div class="row g-2 mt-4 mb-5"> <div class="col-6">
                             <a href="index.php" class="btn btn-secondary w-100 py-2 fw-bold">INICI</a>
                         </div>
                         <div class="col-6">
@@ -53,6 +52,8 @@ $nomTecnic = $row ? $row['nom'] : "Tècnic";
         </div>
 
     </div>
+
+    <?php include 'footer.php'; ?>
 
 </body>
 </html>

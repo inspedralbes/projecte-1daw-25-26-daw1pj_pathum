@@ -7,7 +7,7 @@
             </div>
 
             <div class="col-4 text-center">
-                <h3 class="mb-0 fw-bold text-white" style="letter-spacing: 1px;">INSTITUT PEDRALBES</h3>
+                <h3 class="mb-0 fw-bold" style="letter-spacing: 1px;">INSTITUT PEDRALBES</h3>
             </div>
 
             <div class="col-4"></div>
