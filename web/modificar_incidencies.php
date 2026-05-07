@@ -32,7 +32,7 @@ $resultat = $conn->query("SELECT idIncidencia, descripcio, data FROM INCIDENCIA 
     <title>Modificar Incidències</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="py-5 bg-white">
+<body class="py-5 bg-white"> <?php include 'header.php'; ?>
     <div class="container text-center" style="max-width: 800px;">
         <h1 class="fw-bold mb-1">Modificar Incidències</h1>
         <h5 class="text-muted mb-5">Tècnic: <?= $nomTecnic ?></h5>

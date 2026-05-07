@@ -31,7 +31,7 @@ $incidencia = $res_inc->fetch_assoc();
     <title>Gestionar Incidència</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="py-5 bg-white text-center">
+<body class="py-5 bg-white text-center"> <?php include 'header.php'; ?>
 
     <div class="container" style="max-width: 600px;">
         <h1 class="fw-bold mb-5">Gestionar Incidència</h1>

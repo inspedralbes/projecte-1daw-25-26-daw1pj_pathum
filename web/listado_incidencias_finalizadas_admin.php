@@ -29,7 +29,7 @@ $result = $conn->query($sql);
   <title>Incidències Finalitzades</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="min-vh-100 d-flex flex-column align-items-center justify-content-center bg-light py-5">
+<body class="min-vh-100 d-flex flex-column align-items-center justify-content-center bg-light py-5"> <?php include 'header.php'; ?>
   <div class="container">
 
     <h2 class="mb-4">Llistat de les Incidències finalitzades</h2>

@@ -19,7 +19,7 @@ $resultat = $conn->query("SELECT idIncidencia, descripcio, data FROM INCIDENCIA 
     <title>Incidències de <?= $nomTecnic ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="vh-100 d-flex align-items-center justify-content-center bg-white">
+<body class="vh-100 d-flex align-items-center justify-content-center bg-white"> <?php include 'header.php'; ?>
 
     <div class="container text-center" style="max-width: 700px;">
         
