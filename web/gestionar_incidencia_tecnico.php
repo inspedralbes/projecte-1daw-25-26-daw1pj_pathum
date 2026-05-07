@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tancar'])) {
     $sql_update = "UPDATE INCIDENCIA SET dataFinalitzacio = '$dataFi' WHERE idIncidencia = $idIncidencia";
     
     if ($conn->query($sql_update)) {
-        header("Location: modificar_incidencies.php?id=$idTecnic");
+        header("Location: modificar_incidencia_tecnico.php?id=$idTecnic");
         exit();
     } else {
         echo "Error al tancar: " . $conn->error;
@@ -58,7 +58,7 @@ $incidencia = $res_inc->fetch_assoc();
         <?php endif; ?>
 
         <div class="mt-4">
-            <a href="modificar_incidencies.php?id=<?= $idTecnic ?>" class="btn btn-secondary px-4">VOLVER</a>
+            <a href="modificar_incidencia_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary px-4">VOLVER</a>
         </div>
     </div>
 

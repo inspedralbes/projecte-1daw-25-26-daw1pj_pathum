@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interfaz de Tecnico</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfície d'Administrador - Institut Pedralbes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="vh-100 d-flex align-items-center justify-content-center bg-light"> <?php include 'header.php'; ?>
-  <div class="container text-center">
 
-    <img src="logo_pedralbes.png">
-    <p class="fw-bold mb-5">Institut Pedralbes</p>
+<body class="bg-white">
 
-    <h1 class="mb-5 fw-bold">Interfície de administrador</h1>
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-4">
-        <div class="d-grid gap-3">
-          <a href="listado_tecnicos_admin.php" class="btn btn-info py-3 shadow-sm">Buscar Tècnics</a>
-          <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm">Llistar totes les Incidències</a>
-          <a href="asignacion_incidencies_admin.php" class="btn btn-info py-3 shadow-sm">Assignar Incidències</a>
+    <?php include 'header.php'; ?>
+
+    <div class="container text-center" style="min-height: 75vh; display: flex; flex-direction: column; justify-content: center;">
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5">
+                
+                <h1 class="mb-5 fw-bold text-dark text-uppercase">Interfície d'Administrador</h1>
+                
+                <div class="d-grid gap-3">
+                    <a href="listado_tecnicos_admin.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase">Buscar Tècnics</a>
+                    <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase">Llistar totes les Incidències</a>
+                </div>
+
+                <div class="mt-4">
+                    <a href="index.php" class="btn btn-secondary w-100 py-2 fw-bold text-uppercase shadow-sm">Volver</a>
+                </div>
+
+            </div>
         </div>
-        <div class="d-flex justify-content-end mt-3">
-          <a href="index.php" class="btn btn-secondary shadow-sm">Volver</a>
-        </div>
-      </div>
+
     </div>
-  </div>
+
+    <?php include 'footer.php'; ?>
+
 </body>
 </html>

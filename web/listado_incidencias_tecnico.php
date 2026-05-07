@@ -58,7 +58,7 @@ $resultat = $conn->query("SELECT idIncidencia, descripcio, data FROM INCIDENCIA 
                 <a href="index.php" class="btn btn-secondary w-100 py-2 fw-bold">INICI</a>
             </div>
             <div class="col-6 col-md-4">
-                <a href="incidencias_tecnic.php?id=<?= $idTecnic ?>" class="btn btn-secondary w-100 py-2 fw-bold">VOLVER</a>
+                <a href="incidencies_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary w-100 py-2 fw-bold">VOLVER</a>
             </div>
         </div>
 

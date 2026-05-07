@@ -45,7 +45,7 @@ $resultat = $conn->query("SELECT idIncidencia, descripcio, data FROM INCIDENCIA 
                                 <td class="fw-bold py-3">#<?= $inc['idIncidencia'] ?></td>
                                 <td class="text-start py-3"><?= $inc['descripcio'] ?></td>
                                 <td class="py-3">
-                                    <a href="gestionar_incidencia.php?id=<?= $inc['idIncidencia'] ?>&tecnic=<?= $idTecnic ?>" class="btn btn-sm btn-info fw-bold shadow-sm">
+                                    <a href="gestionar_incidencia_tecnico.php?id=<?= $inc['idIncidencia'] ?>&tecnic=<?= $idTecnic ?>" class="btn btn-sm btn-info fw-bold shadow-sm">
                                         GESTIONAR / TANCAR
                                     </a>
                                 </td>
@@ -61,7 +61,7 @@ $resultat = $conn->query("SELECT idIncidencia, descripcio, data FROM INCIDENCIA 
         <?php endif; ?>
 
         <div class="mt-5 mb-5 pb-5">
-            <a href="incidencias_tecnic.php?id=<?= $idTecnic ?>" class="btn btn-secondary px-5 py-2 fw-bold">VOLVER</a>
+            <a href="incidencies_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary px-5 py-2 fw-bold">VOLVER</a>
         </div>
     </div>
 

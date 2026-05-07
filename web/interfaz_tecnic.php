@@ -24,7 +24,7 @@ $tecnics = $conn->query("SELECT idTecnic, nom FROM TECNIC ORDER BY nom");
 
         <div class="d-grid gap-3">
           <?php while ($row = $tecnics->fetch_assoc()): ?>
-            <a href="incidencias_tecnic.php?id=<?= $row['idTecnic'] ?>" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase">
+            <a href="incidencies_tecnico.php?id=<?= $row['idTecnic'] ?>" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase">
               <?= $row['nom'] ?>
             </a>
           <?php endwhile; ?>

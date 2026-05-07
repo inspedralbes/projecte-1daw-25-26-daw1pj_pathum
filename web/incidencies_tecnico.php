@@ -30,11 +30,11 @@ $nomTecnic = $row ? $row['nom'] : "Tècnic";
                 
                 <div class="d-grid gap-3">
                     
-                    <a href="llistat_incidencies.php?id=<?= $idTecnic ?>" class="btn btn-info py-4 shadow-sm fw-bold">
+                    <a href="listado_incidencias_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-info py-4 shadow-sm fw-bold">
                         LLISTAT D'INCIDÈNCIES<br>PENDENTS
                     </a>
                     
-                    <a href="modificar_incidencies.php?id=<?= $idTecnic ?>" class="btn btn-info py-4 shadow-sm fw-bold">
+                    <a href="modificar_incidencia_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-info py-4 shadow-sm fw-bold">
                         MODIFICAR INCIDÈNCIES
                     </a>
 
