@@ -17,7 +17,7 @@
                 
                 <div class="d-grid gap-3">
                     <a href="interfaz_tecnic.php" class="btn btn-info py-3 shadow-sm">TÈCNIC</a>
-                    <a href="interfaz_admin.php" class="btn btn-info py-3 shadow-sm">ADMINISTRADOR</a>
+                    <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm">ADMINISTRADOR</a>
                     <a href="interfaz_incidencias_profesor.php" class="btn btn-info py-3 shadow-sm">PROFESSOR</a>
                 </div>
 
