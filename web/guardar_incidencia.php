@@ -1,12 +1,13 @@
 <?php
 require_once 'connexio.php';
 
-$descripcio  = $_POST['descripcio'];
+$descripcio  = $conn->real_escape_string($_POST['descripcio']);
 $departament = (int) $_POST['departament'];
 $tipo        = (int) $_POST['tipo'];
 
-$conn->query("INSERT INTO INCIDENCIA (descripcio, data, departament, tipo) 
-VALUES ('$descripcio', NOW(), $departament, $tipo)");
+
+$conn->query("INSERT INTO INCIDENCIA (descripcio, data, departament, tipo, tecnic) 
+VALUES ('$descripcio', NOW(), $departament, $tipo, NULL)");
 
 $id = $conn->insert_id;
 ?>
