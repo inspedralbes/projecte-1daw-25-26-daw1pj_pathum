@@ -84,6 +84,9 @@ $resultat = $conn->query($sql);
             <div class="col-6 col-md-4">
                 <a href="interfaz_tecnic.php" class="btn btn-secondary w-100 py-2 fw-bold">VOLVER</a>
             </div>
+            <div class="col-6 col-md-4">
+                <a href="tabla_actuacio_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary w-100 py-2 fw-bold">TAULA DE ACTUACIÓ</a>
+            </div>
         </div>
 
     </div>

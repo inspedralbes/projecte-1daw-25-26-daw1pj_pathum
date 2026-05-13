@@ -10,15 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $minuts = (int)$_POST['minuts'];
     $temps = $hores * 60 + $minuts;
     $visible = isset($_POST['visible_usuari']) ? 1 : 0;
+    $accion = $_POST['accion']; // Detectar qué botón se pulsó
 
-    // 1. Insertar la actuación
+    // 1. Insertar siempre la actuación en la tabla ACTUACIO
     $conn->query("INSERT INTO ACTUACIO (descripcio, data, temps, incidencia, visible)
         VALUES ('$comentari', '$dataFi', $temps, $idIncidencia, $visible)");
     
-    // 2. Actualizar la incidencia con la fecha de finalización
-    $conn->query("UPDATE INCIDENCIA SET dataFinalitzacio = '$dataFi' WHERE idIncidencia = $idIncidencia");
+    // 2. Si el botón pulsado es "finalizar", actualizamos la incidencia
+    if ($accion === 'finalizar') {
+        $conn->query("UPDATE INCIDENCIA SET dataFinalitzacio = '$dataFi' WHERE idIncidencia = $idIncidencia");
+    }
 
-    // 3. REDIRECCIÓN CORREGIDA: Volver a la tabla unificada del técnico
+    // 3. Redirigir siempre de vuelta al listado
     header("Location: incidencies_tecnico.php?id=$idTecnic");
     exit();
 }
@@ -31,7 +34,8 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
     <title>Gestionar Incidència</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light" style="padding-bottom: 80px;"> <?php include 'header.php'; ?>
+<body class="bg-light" style="padding-bottom: 80px;"> 
+<?php include 'header.php'; ?>
 
 <div class="container" style="max-width: 600px; margin-top: 20px !important;">
     <h2 class="fw-bold mb-4">Gestionar Incidència #<?= $idIncidencia ?></h2>
@@ -45,7 +49,7 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
     <div class="bg-white p-4 rounded shadow-sm">
         <form method="POST">
             <div class="mb-3">
-                <label class="form-label">Descripció de la solució:</label>
+                <label class="form-label">Descripció de l'actuació:</label>
                 <textarea name="comentari_tecnic" class="form-control" rows="3" required></textarea>
             </div>
 
@@ -64,7 +68,7 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Data de tancament:</label>
+                <label class="form-label">Data:</label>
                 <input type="date" name="data_fi" class="form-control" value="<?= date('Y-m-d') ?>" required>
             </div>
 
@@ -73,7 +77,10 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
                 <label class="form-check-label" for="visible">Visible per l'usuari</label>
             </div>
 
-            <button type="submit" class="btn btn-danger w-100">FINALITZAR</button>
+            <div class="d-grid gap-2">
+                <button type="submit" name="accion" value="añadir" class="btn btn-primary">AFEGIR ACTUACIÓ</button>
+                <button type="submit" name="accion" value="finalizar" class="btn btn-danger">FINALITZAR INCIDÈNCIA</button>
+            </div>
         </form>
     </div>
     <?php else: ?>

@@ -2,29 +2,35 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <title>Benvinguts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvinguts - Institut Pedralbes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="vh-100 d-flex align-items-center justify-content-center bg-light">
+<body class="bg-white d-flex flex-column min-vh-100">
 
-    <div class="container text-center">
-        
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-4">
+    <?php include 'header.php'; ?>
+
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+        <div class="container">
+            <div class="row justify-content-center">
                 
-                <h1 class="mb-5 fw-bold">BENVINGUTS</h1>
-                
-                <div class="d-grid gap-3">
-                    <a href="interfaz_tecnic.php" class="btn btn-info py-3 shadow-sm">TÈCNIC</a>
-                    <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm">ADMINISTRADOR</a>
-                    <a href="interfaz_incidencias_profesor.php" class="btn btn-info py-3 shadow-sm">PROFESSOR</a>
+                <div class="col-10 col-md-6 col-lg-4 text-center">
+                    
+                    <h1 class="mb-5 fw-bold text-dark text-uppercase">Benvinguts</h1>
+                    
+                    <div class="d-grid gap-3">
+                        <a href="interfaz_tecnic.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase text-dark">Tècnic</a>
+                        <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase text-dark">Administrador</a>
+                        <a href="interfaz_incidencias_profesor.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase text-dark">Professor</a>
+                    </div>
+
                 </div>
-
             </div>
         </div>
+    </main>
 
-    </div>
+    <?php include 'footer.php'; ?>
 
 </body>
-</html> 
+</html>
