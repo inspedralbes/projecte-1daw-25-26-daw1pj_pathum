@@ -2,6 +2,7 @@
 require_once 'connexio.php';
 $idIncidencia = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $idTecnic = isset($_GET['tecnic']) ? (int)$_GET['tecnic'] : 0;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dataFi = $_POST['data_fi'];
     $comentari = $conn->real_escape_string($_POST['comentari_tecnic']);
@@ -44,11 +45,11 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
         </div>
 
         <div class="bg-white p-4 rounded shadow-sm border">
-            <form method="POST">
+            <form method="POST" id="miFormulario">
 
                 <div class="mb-3">
                     <label class="form-label fw-bold text-dark text-uppercase small">Descripció de la solució:</label>
-                    <textarea name="comentari_tecnic" class="form-control" rows="3" required></textarea>
+                    <textarea name="comentari_tecnic" id="textoSolucion" class="form-control" rows="3" required></textarea>
                 </div>
 
                 <div class="mb-3">
@@ -95,6 +96,18 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
 </main>
 
 <?php include 'footer.php'; ?>
+
+<script>
+
+    document.getElementById('miFormulario').onsubmit = function(event) {
+        var comentario = document.getElementById('textoSolucion').value;
+
+        if (comentario.length < 20) {
+            alert("La descripció ha de tenir almenys 20 caràcters!");
+            event.preventDefault();
+        }
+    };
+</script>
 
 </body>
 </html>
