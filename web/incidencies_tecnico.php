@@ -1,14 +1,14 @@
+<?php require_once 'logger.php'; ?>
+
 <?php
 require_once 'connexio.php';
 
 $idTecnic = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-// Obtenemos el nombre del técnico
 $res = $conn->query("SELECT nom FROM TECNIC WHERE idTecnic = $idTecnic");
 $row = $res->fetch_assoc();
 $nomTecnic = $row['nom'] ?? "Tècnic";
 
-// Consultamos incidencias (Pendientes primero)
 $sql = "SELECT idIncidencia, descripcio, data, dataFinalitzacio 
         FROM INCIDENCIA 
         WHERE tecnic = $idTecnic 

@@ -1,3 +1,5 @@
+<?php require_once 'logger.php'; ?>
+
 <?php
 require_once 'connexio.php';
 $idIncidencia = isset($_GET['id']) ? (int)$_GET['id'] : 0;

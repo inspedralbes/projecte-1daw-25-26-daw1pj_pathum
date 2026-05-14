@@ -1,3 +1,5 @@
+<?php require_once 'logger.php'; ?>
+
 <?php
 require_once 'connexio.php';
 $departaments = $conn->query("SELECT * FROM DEPARTMENT ORDER BY nom");
