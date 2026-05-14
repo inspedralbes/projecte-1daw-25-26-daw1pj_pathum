@@ -1,3 +1,5 @@
+<?php require_once 'logger.php'; ?>
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>

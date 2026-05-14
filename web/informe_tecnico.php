@@ -87,6 +87,7 @@ while ($row = $result->fetch_assoc()) {
 
     <div class="mt-4">
         <a href="index.php" class="btn btn-secondary">INICI</a>
+        <a href="listado_incidencias_admin.php" class="btn btn-secondary">TORNAR</a>
     </div>
 
 </div>

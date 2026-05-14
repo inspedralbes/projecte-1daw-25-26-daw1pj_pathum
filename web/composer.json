@@ -1,0 +1,13 @@
+{
+    "name": "humberto/projecte-1daw",
+    "autoload": {
+    },
+    "authors": [
+        {
+            "name": "Humberto"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^2.1"
+    }
+}

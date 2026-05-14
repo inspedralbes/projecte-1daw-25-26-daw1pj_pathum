@@ -114,9 +114,11 @@ $result = $conn->query($sql);
         </table>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-4 d-flex gap-2">
         <a href="index.php" class="btn btn-secondary">Inici</a>
-    </div>
+        <a href="informe_tecnico.php" class="btn btn-secondary">Informe Tècnics</a>
+        <a href="departamento_tecnico.php" class="btn btn-secondary">Consum Departaments</a>
+</div>
 
 </div>
 
