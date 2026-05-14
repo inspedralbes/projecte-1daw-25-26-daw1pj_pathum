@@ -12,14 +12,13 @@
     <?php include 'header.php'; ?>
 
     <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
-        <div class="container">
-            <div class="row justify-content-center">
+        <div class="container my-auto"> <div class="row justify-content-center">
                 
-                <div class="col-10 col-md-6 col-lg-4 text-center">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-4 text-center">
                     
-                    <h1 class="mb-5 fw-bold text-dark text-uppercase">Benvinguts</h1>
+                    <h1 class="mb-5 fw-bold text-dark text-uppercase h2">Benvinguts</h1>
                     
-                    <div class="d-grid gap-3">
+                    <div class="d-grid gap-3 mb-4">
                         <a href="interfaz_tecnic.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase text-dark">Tècnic</a>
                         <a href="listado_incidencias_admin.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase text-dark">Administrador</a>
                         <a href="interfaz_incidencias_profesor.php" class="btn btn-info py-3 shadow-sm fw-bold text-uppercase text-dark">Professor</a>

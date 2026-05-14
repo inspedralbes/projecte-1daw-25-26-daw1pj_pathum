@@ -11,13 +11,13 @@ $tipus = $conn->query("SELECT * FROM TIPO ORDER BY nom");
     <title>Crear incidència</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
     <?php include 'header.php'; ?>
 
-    <div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="container d-flex align-items-center justify-content-center flex-grow-1 py-5">
         <div class="row justify-content-center w-100">
-            <div class="col-12 col-md-6 bg-white p-5 shadow-sm rounded text-center">
+            <div class="col-12 col-md-8 col-lg-6 bg-white p-5 shadow-sm rounded text-center">
                 <h2 class="mb-5">Crear nova Incidència</h2>
                 
                 <form id="formCrear" action="guardar_incidencia.php" method="POST">
@@ -46,7 +46,7 @@ $tipus = $conn->query("SELECT * FROM TIPO ORDER BY nom");
                         <textarea name="descripcio" id="txtDesc" class="form-control bg-secondary-subtle border-0" rows="4"></textarea>
                     </div>
                     
-                    <div class="d-flex justify-content-between mt-4">
+                    <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 mt-4">
                         <a href="index.php" class="btn btn-secondary px-4">INICI</a>
                         <a href="interfaz_incidencias_profesor.php" class="btn btn-secondary px-4">VOLVER</a>
                         <button type="submit" class="btn btn-primary px-4">CREAR</button>
@@ -64,7 +64,6 @@ $tipus = $conn->query("SELECT * FROM TIPO ORDER BY nom");
             var tipo = document.getElementById('selTipo').value;
             var desc = document.getElementById('txtDesc').value;
 
-            
             if (dep === "" || tipo === "" || desc.trim() === "") {
                 alert("Error: Tots els camps són obligatoris!");
                 event.preventDefault(); 

@@ -26,71 +26,83 @@ while ($row = $result->fetch_assoc()) {
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe de Tècnics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
 <?php include 'header.php'; ?>
 
-<div class="container mt-4 mb-5 pb-5">
+<main class="flex-grow-1 py-4">
+    <div class="container mb-5 pb-5">
 
-    <h2 class="mb-4">Informe de Tècnics</h2>
+        <h2 class="mb-4 fw-bold text-dark text-uppercase h3">Informe de Tècnics</h2>
 
-    <?php foreach ($dades as $nomTecnic => $prioritats): ?>
-        <div class="card shadow-sm mb-4">
-            <div class="card-header fw-bold fs-5">
-                <?= htmlspecialchars($nomTecnic) ?>
+        <?php foreach ($dades as $nomTecnic => $prioritats): ?>
+            <div class="card shadow-sm mb-5 border-0">
+                <div class="card-header bg-dark text-white fw-bold fs-5 py-3">
+                    <i class="bi bi-person-badge me-2"></i><?= htmlspecialchars($nomTecnic) ?>
+                </div>
+                <div class="card-body p-3 p-md-4">
+                    <?php foreach (['Alta', 'Mitja', 'Baixa'] as $prioritat): ?>
+                        <?php if (isset($prioritats[$prioritat])): ?>
+                            <h6 class="fw-bold mt-3 mb-3">
+                                <?php
+                                $badgeClass = match($prioritat) {
+                                    'Alta'  => 'bg-danger',
+                                    'Mitja' => 'bg-warning text-dark',
+                                    'Baixa' => 'bg-info text-dark'
+                                };
+                                ?>
+                                <span class="badge <?= $badgeClass ?> px-3 py-2 text-uppercase"><?= $prioritat ?></span>
+                            </h6>
+                            
+                            <div class="table-responsive rounded-3 mb-4">
+                                <table class="table table-hover align-middle border shadow-sm">
+                                    <thead class="table-secondary">
+                                        <tr class="small text-uppercase">
+                                            <th class="py-3">ID</th>
+                                            <th class="py-3">Descripció</th>
+                                            <th class="py-3 text-nowrap">Data inici</th>
+                                            <th class="py-3 text-nowrap">Temps total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($prioritats[$prioritat] as $inc): ?>
+                                        <tr>
+                                            <td class="fw-bold">#<?= $inc['idIncidencia'] ?></td>
+                                            <td class="small"><?= htmlspecialchars($inc['descripcio']) ?></td>
+                                            <td class="text-nowrap small"><?= date('d/m/Y', strtotime($inc['data'])) ?></td>
+                                            <td class="text-nowrap fw-bold text-primary"><?= $inc['temps_total'] ?? 0 ?> <small>min</small></td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
-            <div class="card-body">
-                <?php foreach (['Alta', 'Mitja', 'Baixa'] as $prioritat): ?>
-                    <?php if (isset($prioritats[$prioritat])): ?>
-                        <h6 class="fw-bold mt-3">
-                            <?php
-                            $badgeClass = match($prioritat) {
-                                'Alta'  => 'bg-danger',
-                                'Mitja' => 'bg-warning text-dark',
-                                'Baixa' => 'bg-info text-dark'
-                            };
-                            ?>
-                            <span class="badge <?= $badgeClass ?>"><?= $prioritat ?></span>
-                        </h6>
-                        <table class="table table-secondary table-hover align-middle">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Descripció</th>
-                                    <th>Data inici</th>
-                                    <th>Temps total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($prioritats[$prioritat] as $inc): ?>
-                                <tr>
-                                    <td>#<?= $inc['idIncidencia'] ?></td>
-                                    <td><?= htmlspecialchars($inc['descripcio']) ?></td>
-                                    <td><?= date('d/m/Y', strtotime($inc['data'])) ?></td>
-                                    <td><?= $inc['temps_total'] ?? 0 ?> min</td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+        <?php endforeach; ?>
+
+        <?php if (empty($dades)): ?>
+            <div class="alert alert-white border shadow-sm text-center py-5">
+                <p class="mb-0 text-muted fw-bold">No hi ha incidències pendents en aquest moment.</p>
+            </div>
+        <?php endif; ?>
+
+        <div class="row g-3 mt-4">
+            <div class="col-12 col-sm-6 col-md-3">
+                <a href="index.php" class="btn btn-secondary w-100 py-2 fw-bold text-uppercase">Inici</a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <a href="listado_incidencias_admin.php" class="btn btn-secondary w-100 py-2 fw-bold text-uppercase">Tornar</a>
             </div>
         </div>
-    <?php endforeach; ?>
 
-    <?php if (empty($dades)): ?>
-        <div class="alert alert-light border text-center">No hi ha incidències pendents.</div>
-    <?php endif; ?>
-
-    <div class="mt-4">
-        <a href="index.php" class="btn btn-secondary">INICI</a>
-        <a href="listado_incidencias_admin.php" class="btn btn-secondary">TORNAR</a>
     </div>
-
-</div>
+</main>
 
 <?php include 'footer.php'; ?>
 
