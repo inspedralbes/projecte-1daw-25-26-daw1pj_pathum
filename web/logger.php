@@ -15,7 +15,6 @@ function registrarLog() {
             'timestamp' => new MongoDB\BSON\UTCDateTime()
         ]);
     } catch (Exception $e) {
-        // Si falla MongoDB no aturem la web
     }
 }
 

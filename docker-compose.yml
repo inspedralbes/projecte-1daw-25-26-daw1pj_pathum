@@ -9,14 +9,11 @@ services:
   web:
     #La imatge php:apache no conté els drivers de mysql, hem de fer una imatge a mida
     #image: php:apache
-    build:
-      context: ebota/daw:apache_php_mysql_mongodb
-      dockerfile: Dockerfile_php
+    image: ebota/daw:apache_php_mysql_mongodb
     ports:
-      - "8080:82"
+      - "8080:80"
     volumes:
       - ./web:/var/www/html
-    command: /bin/bash -c "composer install --no-interaction --no-plugins --no-scripts && apache2-foreground"
     environment:
       VAR1: "sóc una pera i estic al docker-compose"
       VAR2: ${VAR2:-}
