@@ -1,3 +1,6 @@
+<?php
+include_once 'logger.php';
+?>
 <header class="py-2 mb-5 w-100" style="background-color: #00e1ff; border-bottom: 2px solid #00e1ff; display: block; clear: both;">
     <div class="container-fluid px-4">
         <div class="row align-items-center">

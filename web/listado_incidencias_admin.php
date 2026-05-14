@@ -1,5 +1,18 @@
 <?php
-require_once 'connexio.php';
+
+require_once 'connexio.php'; 
+require_once __DIR__ . '/vendor/autoload.php'; 
+
+
+try {
+    $mongoClient = new MongoDB\Client("mongodb://root:example@mongo:27017/");
+    $logCollection = $mongoClient->logs->accessos;
+    $totalLogs = $logCollection->countDocuments();
+} catch (Exception $e) {
+    $totalLogs = 0;
+}
+
+
 $idBusqueda = isset($_GET['id_busqueda']) ? $conn->real_escape_string($_GET['id_busqueda']) : '';
 $sql = "
     SELECT 
@@ -30,6 +43,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestió d'Incidències</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body class="bg-light">
 
@@ -39,13 +53,21 @@ $result = $conn->query($sql);
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Llistat d'Incidències</h2>
-        <form action="" method="GET" class="d-flex gap-2">
-            <input type="number" name="id_busqueda" class="form-control" placeholder="Cerca per ID..." value="<?= htmlspecialchars($idBusqueda) ?>">
-            <button type="submit" class="btn btn-primary">Cercar</button>
-            <?php if(!empty($idBusqueda)): ?>
-                <a href="?" class="btn btn-outline-secondary">Veure totes</a>
-            <?php endif; ?>
-        </form>
+        
+        <div class="d-flex gap-2">
+            <a href="lista_logs.php" class="btn btn-info d-flex align-items-center gap-2 text-white">
+                <i class="bi bi-bar-chart-line-fill"></i> 
+                <span class="badge bg-white text-info"><?= $totalLogs ?></span>
+            </a>
+
+            <form action="" method="GET" class="d-flex gap-2">
+                <input type="number" name="id_busqueda" class="form-control" placeholder="Cerca per ID..." value="<?= htmlspecialchars($idBusqueda) ?>">
+                <button type="submit" class="btn btn-primary">Cercar</button>
+                <?php if(!empty($idBusqueda)): ?>
+                    <a href="?" class="btn btn-outline-secondary">Veure totes</a>
+                <?php endif; ?>
+            </form>
+        </div>
     </div>
 
     <div class="table-responsive shadow-sm rounded">
@@ -118,7 +140,7 @@ $result = $conn->query($sql);
         <a href="index.php" class="btn btn-secondary">Inici</a>
         <a href="informe_tecnico.php" class="btn btn-secondary">Informe Tècnics</a>
         <a href="departamento_tecnico.php" class="btn btn-secondary">Consum Departaments</a>
-</div>
+    </div>
 
 </div>
 
