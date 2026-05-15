@@ -1,7 +1,7 @@
-<?php require_once 'logger.php'; ?>
-
-<?php
+<?php 
+require_once 'logger.php'; 
 require_once 'connexio.php';
+
 $idIncidencia = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $idTecnic = isset($_GET['tecnic']) ? (int)$_GET['tecnic'] : 0;
 
@@ -24,8 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: incidencies_tecnico.php?id=$idTecnic");
     exit();
 }
+
 $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idIncidencia")->fetch_assoc();
 ?>
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -34,6 +36,7 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light" style="padding-bottom: 80px;"> 
+
 <?php include 'header.php'; ?>
 
 <div class="container" style="max-width: 600px; margin-top: 20px !important;">
@@ -90,6 +93,7 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
         <a href="incidencies_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary">VOLVER</a>
     </div>
 </div>
+
 <?php include 'footer.php'; ?>
 </body>
 </html>
