@@ -12,16 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $visible = isset($_POST['visible_usuari']) ? 1 : 0;
     $accion = $_POST['accion']; 
 
-    // 1. Insertar siempre la actuación en la tabla ACTUACIO
+   
     $conn->query("INSERT INTO ACTUACIO (descripcio, data, temps, incidencia, visible)
         VALUES ('$comentari', '$dataFi', $temps, $idIncidencia, $visible)");
     
-    // 2. Si el botón pulsado es "finalizar", actualizamos la incidencia
+    
     if ($accion === 'finalizar') {
         $conn->query("UPDATE INCIDENCIA SET dataFinalitzacio = '$dataFi' WHERE idIncidencia = $idIncidencia");
     }
 
-    // 3. Redirigir siempre de vuelta al listado
+    
     header("Location: incidencies_tecnico.php?id=$idTecnic");
     exit();
 }
@@ -101,10 +101,10 @@ $incidencia = $conn->query("SELECT * FROM INCIDENCIA WHERE idIncidencia = $idInc
     document.getElementById('miFormulario').onsubmit = function(event) {
         var comentario = document.getElementById('textoSolucion').value;
 
-        // Comprobamos que el texto tenga al menos 20 caracteres reales (sin contar espacios vacíos)
+       
         if (comentario.trim().length < 20) {
             alert("La descripció de l'actuació ha de tenir almenys 20 caràcters!");
-            event.preventDefault(); // Evita que se envíe el formulario
+            event.preventDefault(); 
         }
     };
 </script>

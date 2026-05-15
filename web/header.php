@@ -6,15 +6,18 @@ include_once 'logger.php';
         <div class="row align-items-center">
             
             <div class="col-4 d-flex align-items-center">
-                <img src="logo_pedralbes.png" alt="Logo" style="max-height: 80px; width: auto;">
-            </div>
+                <a href="index.php" style="text-decoration: none;">
+                    <img src="logo_pedralbes.png" alt="Logo" style="max-height: 80px; width: auto;">
+                </a> </div>
 
             <div class="col-4 text-center">
                 <h3 class="mb-0 fw-bold" style="letter-spacing: 1px;">INSTITUT PEDRALBES</h3>
             </div>
 
-            <div class="col-4"></div>
-
+            <div class="col-4 d-flex justify-content-end">
+                <a href="lista_logs.php" class="text-dark text-decoration-none fw-bold small" style="letter-spacing: 0.5px; text-transform: uppercase;">Estadístiques</a>
+            </div>
+            
         </div>
     </div>
 </header>

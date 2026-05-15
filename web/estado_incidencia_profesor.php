@@ -58,8 +58,8 @@ if ($id) {
                 <div class="card-body p-4">
                     <div class="row g-3">
                         <div class="col-12 col-md-6 border-end-md">
-                            <p class="mb-2"><strong>Departament:</strong><br> <?= htmlspecialchars($incidencia['departament']) ?></p>
-                            <p class="mb-2"><strong>Tipus:</strong><br> <?= htmlspecialchars($incidencia['tipus']) ?></p>
+                            <p class="mb-2"><strong>Departament:</strong><br> <?= htmlspecialchars($incidencia['departament'] ?? '') ?></p>
+                            <p class="mb-2"><strong>Tipus:</strong><br> <?= htmlspecialchars($incidencia['tipus'] ?? '') ?></p>
                             <p class="mb-0"><strong>Data obertura:</strong><br> <?= date('d/m/Y', strtotime($incidencia['data'])) ?></p>
                         </div>
                         <hr class="d-md-none">
@@ -76,7 +76,7 @@ if ($id) {
                         </div>
                         <div class="col-12 mt-3 p-3 bg-light rounded border">
                             <strong>Descripció del problema:</strong><br>
-                            <span class="small"><?= htmlspecialchars($incidencia['descripcio']) ?></span>
+                            <span class="small"><?= htmlspecialchars($incidencia['descripcio'] ?? '') ?></span>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ if ($id) {
                             <?php while ($act = $actuacions->fetch_assoc()): ?>
                             <tr>
                                 <td class="text-nowrap small"><?= date('d/m/Y', strtotime($act['data'])) ?></td>
-                                <td class="small"><?= htmlspecialchars($act['descripcio']) ?></td>
+                                <td class="small"><?= htmlspecialchars($act['descripcio'] ?? '') ?></td>
                                 <td class="text-nowrap fw-bold"><?= $act['temps'] ?> <small>min</small></td>
                             </tr>
                             <?php endwhile; ?>

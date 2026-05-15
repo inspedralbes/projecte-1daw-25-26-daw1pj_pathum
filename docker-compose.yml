@@ -40,6 +40,9 @@ services:
       - mongodb_data:/data/db
 
   mongo-express:
+   # Per entrar a la web de mongo-express, les credencials són
+    # admin / pass
+    # disponible a http://localhost:8082
     image: mongo-express
     ports:
       - "8082:8081"
