@@ -58,18 +58,7 @@ $tipus = $conn->query("SELECT * FROM TIPO ORDER BY nom");
 
     <?php include 'footer.php'; ?>
 
-    <script>
-        document.getElementById('formCrear').onsubmit = function(event) {
-            var dep = document.getElementById('selDep').value;
-            var tipo = document.getElementById('selTipo').value;
-            var desc = document.getElementById('txtDesc').value;
-
-            if (dep === "" || tipo === "" || desc.trim() === "") {
-                alert("Error: Tots els camps són obligatoris!");
-                event.preventDefault(); 
-            }
-        };
-    </script>
+    <script src="js/Campsenblanc.js"></script>
 
 </body>
 </html>
