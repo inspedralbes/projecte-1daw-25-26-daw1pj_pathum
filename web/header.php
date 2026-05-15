@@ -10,8 +10,9 @@
                 <h3 class="mb-0 fw-bold" style="letter-spacing: 1px;">INSTITUT PEDRALBES</h3>
             </div>
 
-            <div class="col-4"></div>
-
+            <div class="col-4 d-flex justify-content-end">
+                <a href="estadisticas.php" class="text-dark text-decoration-none fw-bold small" style="letter-spacing: 0.5px;">ESTADÍSTIQUES</a>
+            </div>
         </div>
     </div>
 </header>

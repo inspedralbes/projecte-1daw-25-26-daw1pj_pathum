@@ -12,18 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $minuts = (int)$_POST['minuts'];
     $temps = $hores * 60 + $minuts;
     $visible = isset($_POST['visible_usuari']) ? 1 : 0;
-    $accion = $_POST['accion']; // Detectar qué botón se pulsó
+    $accion = $_POST['accion']; 
 
-    // 1. Insertar siempre la actuación en la tabla ACTUACIO
     $conn->query("INSERT INTO ACTUACIO (descripcio, data, temps, incidencia, visible)
         VALUES ('$comentari', '$dataFi', $temps, $idIncidencia, $visible)");
     
-    // 2. Si el botón pulsado es "finalizar", actualizamos la incidencia
     if ($accion === 'finalizar') {
         $conn->query("UPDATE INCIDENCIA SET dataFinalitzacio = '$dataFi' WHERE idIncidencia = $idIncidencia");
     }
 
-    // 3. Redirigir siempre de vuelta al listado
     header("Location: incidencies_tecnico.php?id=$idTecnic");
     exit();
 }

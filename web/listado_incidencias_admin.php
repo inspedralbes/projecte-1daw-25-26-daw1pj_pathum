@@ -120,7 +120,6 @@ $result = $conn->query($sql);
         <a href="index.php" class="btn btn-secondary">Inici</a>
         <a href="informe_tecnico.php" class="btn btn-secondary">Informe Tècnics</a>
         <a href="departamento_tecnico.php" class="btn btn-secondary">Consum Departaments</a>
-        <a href="estadisticas.php" class="btn btn-secondary">Estadístiques d'Accés</a>
 </div>
 
 </div>
