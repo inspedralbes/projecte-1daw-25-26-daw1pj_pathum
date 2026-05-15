@@ -1,3 +1,4 @@
+<link rel="icon" type="image/png" href="logo_pedralbes.png">
 <?php
 include_once 'logger.php';
 ?>
