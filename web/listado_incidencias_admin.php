@@ -1,19 +1,8 @@
 <?php
-
 require_once 'connexio.php'; 
-require_once __DIR__ . '/vendor/autoload.php'; 
-
-
-try {
-    $mongoClient = new MongoDB\Client("mongodb://root:example@mongo:27017/");
-    $logCollection = $mongoClient->logs->accessos;
-    $totalLogs = $logCollection->countDocuments();
-} catch (Exception $e) {
-    $totalLogs = 0;
-}
-
 
 $idBusqueda = isset($_GET['id_busqueda']) ? $conn->real_escape_string($_GET['id_busqueda']) : '';
+
 $sql = "
     SELECT 
         i.idIncidencia,
@@ -28,11 +17,13 @@ $sql = "
     LEFT JOIN DEPARTMENT d  ON i.departament = d.idDepartment
     LEFT JOIN TECNIC t      ON i.tecnic = t.idTecnic
     LEFT JOIN TIPO tp       ON i.tipo = tp.idTipo";
+
 if (!empty($idBusqueda)) {
     $sql .= " WHERE i.idIncidencia = '$idBusqueda' AND i.dataFinalitzacio IS NULL";
 } else {
     $sql .= " WHERE i.dataFinalitzacio IS NULL";
 }
+
 $sql .= " ORDER BY i.data DESC";
 $result = $conn->query($sql);
 ?>
@@ -55,11 +46,6 @@ $result = $conn->query($sql);
         <h2>Llistat d'Incidències</h2>
         
         <div class="d-flex gap-2">
-            <a href="lista_logs.php" class="btn btn-info d-flex align-items-center gap-2 text-white">
-                <i class="bi bi-bar-chart-line-fill"></i> 
-                <span class="badge bg-white text-info"><?= $totalLogs ?></span>
-            </a>
-
             <form action="" method="GET" class="d-flex gap-2">
                 <input type="number" name="id_busqueda" class="form-control" placeholder="Cerca per ID..." value="<?= htmlspecialchars($idBusqueda) ?>">
                 <button type="submit" class="btn btn-primary">Cercar</button>
@@ -117,7 +103,7 @@ $result = $conn->query($sql);
                                     <div class="mb-1">
                                         <small>
                                             <strong><?= date('d/m/Y', strtotime($act['data'])) ?></strong>
-                                            — <?= $act['descripcio'] ?> (<?= $act['temps'] ?> min)
+                                            — <?= htmlspecialchars($act['descripcio']) ?> (<?= $act['temps'] ?> min)
                                         </small>
                                     </div>
                                 <?php endwhile; ?>
