@@ -1,5 +1,3 @@
-<?php require_once 'logger.php'; ?>
-
 <?php
 require_once 'connexio.php';
 
@@ -18,61 +16,65 @@ $resultat = $conn->query("SELECT a.idActuacio, a.descripcio, a.data, a.temps, a.
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actuacions - <?= $nomTecnic ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-white">
+<body class="bg-white d-flex flex-column min-vh-100">
 
 <?php include 'header.php'; ?>
 
-<div class="container mt-5 mb-5 pb-5" style="max-width: 900px;">
+<main class="flex-grow-1 py-4">
+    <div class="container" style="max-width: 900px;">
 
-    <h1 class="mb-5 fw-bold text-dark">Taula d'Actuacions</h1>
+        <h1 class="mb-4 fw-bold text-dark h2 text-uppercase">Taula d'Actuacions</h1>
+        <h5 class="text-muted mb-4 small text-uppercase">Historial de: <?= htmlspecialchars($nomTecnic) ?></h5>
 
-    <div class="table-responsive shadow-sm rounded border">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-secondary">
-                <tr>
-                    <th>ID Actuació</th>
-                    <th>ID Incidència</th>
-                    <th>Data</th>
-                    <th>Descripció</th>
-                    <th>Temps</th>
-                    <th>Visible</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if ($resultat && $resultat->num_rows > 0): ?>
-                    <?php while ($act = $resultat->fetch_assoc()): ?>
+        <div class="table-responsive shadow-sm rounded border">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-secondary">
                     <tr>
-                        <td class="fw-bold">#<?= $act['idActuacio'] ?></td>
-                        <td>#<?= $act['idIncidencia'] ?></td>
-                        <td><?= date('d/m/Y', strtotime($act['data'])) ?></td>
-                        <td><?= htmlspecialchars($act['descripcio']) ?></td>
-                        <td><?= $act['temps'] ?> min</td>
-                        <td>
-                            <?php if($act['visible']): ?>
-                                <span class="badge bg-success">Sí</span>
-                            <?php else: ?>
-                                <span class="badge bg-secondary">No</span>
-                            <?php endif; ?>
-                        </td>
+                        <th class="py-3">ID Act.</th>
+                        <th class="py-3">ID Inc.</th>
+                        <th class="py-3">Data</th>
+                        <th class="py-3">Descripció</th>
+                        <th class="py-3 text-nowrap">Temps</th>
+                        <th class="py-3">Visible</th>
                     </tr>
-                    <?php endwhile; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="6" class="text-center py-4 text-muted">No hi ha actuacions registrades.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    <?php if ($resultat && $resultat->num_rows > 0): ?>
+                        <?php while ($act = $resultat->fetch_assoc()): ?>
+                        <tr>
+                            <td class="fw-bold">#<?= $act['idActuacio'] ?></td>
+                            <td class="text-muted">#<?= $act['idIncidencia'] ?></td>
+                            <td style="white-space: nowrap;"><?= date('d/m/Y', strtotime($act['data'])) ?></td>
+                            <td class="text-start small"><?= htmlspecialchars($act['descripcio']) ?></td>
+                            <td class="text-nowrap"><?= $act['temps'] ?> min</td>
+                            <td>
+                                <?php if($act['visible']): ?>
+                                    <span class="badge bg-success shadow-sm">Sí</span>
+                                <?php else: ?>
+                                    <span class="badge bg-secondary shadow-sm">No</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="6" class="text-center py-4 text-muted small">No hi ha actuacions registrades.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="mt-4">
-        <a href="incidencies_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary fw-bold">VOLVER</a>
-    </div>
+        <div class="mt-5 mb-5 text-center text-md-start">
+            <a href="incidencies_tecnico.php?id=<?= $idTecnic ?>" class="btn btn-secondary px-5 py-2 fw-bold text-uppercase shadow-sm">Volver</a>
+        </div>
 
-</div>
+    </div>
+</main>
 
 <?php include 'footer.php'; ?>
 

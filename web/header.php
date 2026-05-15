@@ -1,9 +1,16 @@
+<?php
+include_once 'logger.php';
+?>
+<link rel="icon" type="image/png" href="img/logo_pedralbes.png">
+
 <header class="py-2 mb-5 w-100" style="background-color: #00e1ff; border-bottom: 2px solid #00e1ff; display: block; clear: both;">
     <div class="container-fluid px-4">
         <div class="row align-items-center">
             
             <div class="col-4 d-flex align-items-center">
-                <img src="logo_pedralbes.png" alt="Logo" style="max-height: 80px; width: auto;">
+                <a href="index.php">
+                    <img src="img/logo_pedralbes.png" alt="Logo" style="max-height: 80px; width: auto; display: block;">
+                </a> 
             </div>
 
             <div class="col-4 text-center">
@@ -11,8 +18,9 @@
             </div>
 
             <div class="col-4 d-flex justify-content-end">
-                <a href="estadisticas.php" class="text-dark text-decoration-none fw-bold small" style="letter-spacing: 0.5px;">ESTADÍSTIQUES</a>
+                <a href="lista_logs.php" class="text-dark text-decoration-none fw-bold small" style="letter-spacing: 0.5px; text-transform: uppercase;">Estadístiques</a>
             </div>
+            
         </div>
     </div>
 </header>

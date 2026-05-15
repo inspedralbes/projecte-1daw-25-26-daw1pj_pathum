@@ -1,5 +1,3 @@
-<?php require_once 'logger.php'; ?>
-
 <?php
 require_once 'connexio.php';
 
