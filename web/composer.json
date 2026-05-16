@@ -1,10 +1,10 @@
 {
-    "name": "humberto/projecte-1daw",
+    "name": "patrick/projecte-1daw",
     "autoload": {
     },
     "authors": [
         {
-            "name": "Humberto"
+            "name": "Patrick"
         }
     ],
     "require": {
