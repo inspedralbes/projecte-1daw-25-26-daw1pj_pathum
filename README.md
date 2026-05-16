@@ -7,21 +7,6 @@ PROJECTE_FINAL2
 ## DESCRIPCIO WEB
 Aplicació web feta en PHP per gestionar incidències tècniques de l'institut. Hi ha tres tipus d'usuari: el professor/usuari que obre incidències, el tècnic que les resol, i l'administrador que ho controla tot. La base de dades principal és MySQL i els logs es guarden a MongoDB.
 
-## GESTOR DE TASQUES
-![texto alternativo](https://tree.taiga.io/project/a25humminram-daw1pj11/backlog)
-
-## PRODUCCIÓ
-![texto alternativo](http://group11.daw.inspedralbes.cat/)
-
-## PROGRAMACION
-![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/a.png)
-
-## BBDD
-![texto alternativo](http://a25humminram.dam.inspedralbes.cat/imagen1/b.png)
-
-## PEMPOT
-https://design.penpot.app/#/view?file-id=cc32ce3d-bd54-8151-8007-e9d02a29e956&page-id=ceed1600-61c0-8087-8007-e98cb9c2550f&section=interactions&index=13&share-id=614162e1-9f0e-816a-8007-eea8d511cbe3
-
 ## SISTEMAS INFORMATICOS
 Desplegament amb Docker. El projecte inclou un Dockerfile_php per aixecar el servidor PHP amb un Docker Compose up
 
