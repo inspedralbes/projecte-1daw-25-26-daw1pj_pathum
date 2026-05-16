@@ -1,19 +1,21 @@
-# Documentació
-Llistat d'alguns dels punts que han de quedar explicats en aquesta carpeta. Poden ser tots en aquest fitxer o en diversos fitxers enllaçats.
+## DESCRIPCIO WEB
+Aplicació web feta en PHP per gestionar incidències tècniques de l'institut. Hi ha tres tipus d'usuari: el professor/usuari que obre incidències, el tècnic que les resol, i l'administrador que ho controla tot. La base de dades principal és MySQL i els logs es guarden a MongoDB.
 
-És obligatori modificar aquest document!!
+## GESTOR DE TASQUES
+![Taiga](https://tree.taiga.io/project/a25humminram-daw1pj11/backlog)
 
-## Documentació bàsica MÍNIMA
- * Objectius
- * Arquitectura bàsica
-   * Tecnologies utilitzades
-   * Interrelació entre els diversos components
- * Com crees l'entorn de desenvolupament
- * Com desplegues l'aplicació a producció
- * Llistat d'endpoints de l'API de backend (també podeu documentar-ho amb swagger)
-    * Rutes
-   * Exemples de JSON de peticó
-   * Exemples de JSON de resposta i els seus codis d'estat 200? 404?
- * Aplicació Android
- * Altres elements importants.
- * ...
+## PRODUCCIÓ
+![Pagina Web](http://group11.daw.inspedralbes.cat/)
+
+## PROGRAMACION
+![Diagrama de casos d'us](http://a25humminram.dam.inspedralbes.cat/imagen1/a.png)
+
+## BBDD
+![Model Entitat Relació](http://a25humminram.dam.inspedralbes.cat/imagen1/b.png)
+
+## PEMPOT
+https://design.penpot.app/#/view?file-id=cc32ce3d-bd54-8151-8007-e9d02a29e956&page-id=ceed1600-61c0-8087-8007-e98cb9c2550f&section=interactions&index=13&share-id=614162e1-9f0e-816a-8007-eea8d511cbe3
+
+## ENTORN DE DESENVOLUPAMENT
+docker compose up
+s'bre a http://localhost:8080
