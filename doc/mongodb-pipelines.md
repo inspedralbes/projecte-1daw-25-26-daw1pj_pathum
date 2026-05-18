@@ -1,4 +1,4 @@
-# Documentació de Pipelines d'Agregació - Framework de MongoDB
+# Documentació de Pipelines - Framework de MongoDB
 
 En aquest apartat s'explica l'ús de l'Aggregation Framework de MongoDB que hem implementat de forma nativa al nostre fitxer `lista_logs.php`.
 
