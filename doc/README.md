@@ -27,7 +27,7 @@ S'han validat les següents pàgines amb l'eina WAVE
 https://wave.webaim.org
 
 -crear_incidencia.php
-<img width="1920" height="1080" alt="imatge" src="https://" />
+<img width="1920" height="1080" alt="imatge" src="https://github.com/inspedralbes/projecte-1daw-25-26-daw1pj_pathum/blob/main/doc/Captura%20de%20pantalla%20de%202026-05-20%2010-08-47.png" />
 
 -listado_incidencias_admin.php
 <img width="1920" height="1080" alt="imatge" src="https://" />
