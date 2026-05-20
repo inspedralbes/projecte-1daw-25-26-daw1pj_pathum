@@ -21,3 +21,13 @@ docker compose up
 s'bre a http://localhost:8080
 
 <img width="1920" height="1080" alt="imatge" src="https://github.com/user-attachments/assets/5314c598-be5a-4fca-88a9-94a345d90d05" />
+
+## WAVE
+S'han validat les següents pàgines amb l'eina WAVE
+https://wave.webaim.org
+
+-crear_incidencia.php
+<img width="1920" height="1080" alt="imatge" src="https://" />
+
+-listado_incidencias_admin.php
+<img width="1920" height="1080" alt="imatge" src="https://" />
